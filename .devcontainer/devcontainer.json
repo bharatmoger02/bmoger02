@@ -1,0 +1,23 @@
+{
+  "name": "Java",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/doc
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "none",
+      "installMaven": "false",
+      "installGradle": "false"
+    },
+    // ADD THIS LINE for the virtual desktop
+    "ghcr.io/devcontainers/features/desktop-lite:1": {}
+  },
+
+  // ADD THESE SECTIONS to expose the desktop port
+  "forwardPorts": [6080],
+  "portsAttributes": {
+    "6080": {
+      "label": "desktop"
+    }
+  }
+}
